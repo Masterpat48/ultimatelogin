@@ -17,7 +17,7 @@
       currentPage = "home"
       loginError = ""
     } else {
-      loginError = "❌ Username or Password wrong."
+      loginError = "❌ Username or Password are wrong."
     }
   }
 
@@ -70,7 +70,7 @@
     <input bind:value={password} type="password" placeholder="Password" />
     <button on:click={attemptLogin}>Login</button>
     {#if loginError}
-      <div>{loginError}</div>
+      <div class="text">{loginError}</div>
     {/if}
     <p class="text">
       Don't have an account? <a href="#" on:click|preventDefault={goToRegister}>Singin</a>

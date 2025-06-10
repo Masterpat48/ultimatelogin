@@ -114,7 +114,7 @@ func (a *App) RegisterUser(username string, password string) bool {
 		return false
 	}
 
-	// Controlla se l'utente esiste già
+	// Check if the User already exist
 	for _, user := range users {
 		if strings.EqualFold(user.Name, username) {
 			return false // Username already exist
