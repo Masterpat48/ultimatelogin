@@ -80,7 +80,7 @@
 {:else if currentPage === 'register'}
   <main>
     <h2 class="text">Signin</h2>
-    <input bind:value={username} placeholder="Nuovo username" />
+    <input bind:value={username} placeholder="Username" />
     <input bind:value={password} type="password" placeholder="Password" />
     <button on:click={registerUser}>Create Account</button>
     <p class="text">
@@ -97,7 +97,7 @@
     {#if userData.permission === "admin"}
       <section>
         <h3 class="text">Users administration (Admin)</h3>
-        <input bind:value={deleteTarget} placeholder="Utente da eliminare" />
+        <input bind:value={deleteTarget} placeholder="User to delete" />
         <button on:click={deleteUser}>Delete User</button>
         {#if deleteMessage}
           <p class="text">{deleteMessage}</p>
