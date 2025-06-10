@@ -16,6 +16,11 @@ If you want to modify it:
 
 The v1 is in italian, download v1.1+ to have it in english
 
+## Usage
+
+There are 3 pre-made accounts:  
+{mario password123 (user)}     {luigi supersecure (user)}     {ADMIN ADMINIS (admin)}
+
 ## Made with
 
 Golang v1.24.3 windows  
