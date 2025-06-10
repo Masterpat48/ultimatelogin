@@ -2,15 +2,22 @@
 
 ## About
 
-This is the official Wails Svelte template.
+Simple login/register app made with GO wails svelte template
 
-## Live Development
+## How download
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
+There is a stable version in the releases section.
 
-## Building
+If you want to modify it:
+    intall wails - `go install github.com/wailsapp/wails/v2/cmd/wails@latest`
+    clone the repo - `git clone https://github.com/masterpat48/ultimatelogin.git`
+    to test it with live update use `wails dev`
+    to build it use `wails build` or `wails build -windowsconsole=false` (only on windows)
 
-To build a redistributable, production mode package, use `wails build`.
+The v1 is in italian, download v1.1+ to have it in english
+
+## Made with
+
+Golang v1.24.3 windows
+Wails v2.10.1 svelte
+A little bit of AI 🙏
