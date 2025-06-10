@@ -1,0 +1,17 @@
+[
+  {
+    "name": "mario",
+    "pass": "password123",
+    "permission": "user"
+  },
+  {
+    "name": "luigi",
+    "pass": "supersecure",
+    "permission": "user"
+  },
+  {
+    "name": "ADMIN",
+    "pass": "ADMINIS",
+    "permission": "admin"
+  }
+]
