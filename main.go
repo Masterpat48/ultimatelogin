@@ -44,23 +44,23 @@ func main() {
 }
 
 func (a *App) initDatabase() error {
-	// Percorso per il file database nella home dell'utente
+	// databse dir connection
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
 		return err
 	}
 
-	// Creo una cartella nascosta per l'app
+	// Creating the hidden folder
 	appDir := filepath.Join(homeDir, ".ultimatelogin")
 	dbPath := filepath.Join(appDir, "db.json")
 
-	// Crea la directory se non esiste
+	// If the dir doesn't exist we create it here
 	err = os.MkdirAll(appDir, 0755)
 	if err != nil {
 		return err
 	}
 
-	// Se il file non esiste, crealo con i dati embedded
+	// If the file doesnt't exist we create it with embedded data
 	if _, err := os.Stat(dbPath); os.IsNotExist(err) {
 		err = os.WriteFile(dbPath, embeddedDB, 0644)
 		if err != nil {
@@ -68,7 +68,7 @@ func (a *App) initDatabase() error {
 		}
 	}
 
-	// Ora usa dbPath per le operazioni sul database
+	// Using the dit for the database
 	a.dbPath = dbPath
 	return nil
 }

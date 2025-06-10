@@ -17,27 +17,27 @@
       currentPage = "home"
       loginError = ""
     } else {
-      loginError = "❌ Nome utente o password errati."
+      loginError = "❌ Username or Password wrong."
     }
   }
 
   async function deleteUser() {
     const ok = await DeleteUser(deleteTarget)
     deleteMessage = ok
-      ? `✅ Utente '${deleteTarget}' eliminato.`
-      : `❌ Impossibile eliminare '${deleteTarget}'.`
+      ? `✅ User '${deleteTarget}' deleted.`
+      : `❌ Can't delete user '${deleteTarget}'.`
     deleteTarget = ""
   }
 
   async function registerUser() {
     const ok = await RegisterUser(username, password)
     if (ok) {
-      alert("✅ Registrazione completata! Ora puoi fare login.")
+      alert("✅ Signin compleated, now you can login.")
       username = ""
       password = ""
       currentPage = "login"
     } else {
-      alert("❌ Registrazione fallita: utente già esistente o errore.")
+      alert("❌ Signin failed, Username already exist or database error.")
     }
   }
 
@@ -73,40 +73,40 @@
       <div>{loginError}</div>
     {/if}
     <p class="text">
-      Non hai un account? <a href="#" on:click|preventDefault={goToRegister}>Registrati</a>
+      Don't have an account? <a href="#" on:click|preventDefault={goToRegister}>Singin</a>
     </p>
   </main>
 
 {:else if currentPage === 'register'}
   <main>
-    <h2 class="text">Registrazione</h2>
+    <h2 class="text">Signin</h2>
     <input bind:value={username} placeholder="Nuovo username" />
     <input bind:value={password} type="password" placeholder="Password" />
-    <button on:click={registerUser}>Crea Account</button>
+    <button on:click={registerUser}>Create Account</button>
     <p class="text">
-      Hai già un account? <a href="#" on:click|preventDefault={backToLogin}>Torna al login</a>
+      Already signed in? <a href="#" on:click|preventDefault={backToLogin}>Back to the login</a>
     </p>
   </main>
 
 {:else if currentPage === 'home'}
   <main>
-    <h2 class="text">Benvenuto, {userData.name}!</h2>
-    <p class="text">Permesso: <strong>{userData.permission}</strong></p>
+    <h2 class="text">Welcome, {userData.name}!</h2>
+    <p class="text">Permission: <strong>{userData.permission}</strong></p>
     <button on:click={logout}>Logout</button>
 
     {#if userData.permission === "admin"}
       <section>
-        <h3 class="text">Gestione Utenti (Admin)</h3>
+        <h3 class="text">Users administration (Admin)</h3>
         <input bind:value={deleteTarget} placeholder="Utente da eliminare" />
-        <button on:click={deleteUser}>Elimina Utente</button>
+        <button on:click={deleteUser}>Delete User</button>
         {#if deleteMessage}
           <p class="text">{deleteMessage}</p>
         {/if}
       </section>
     {:else}
-      <p class="text">Accesso base. Nessun controllo amministrativo disponibile.</p>
+      <p class="text">Base access, no administration permits.</p>
     {/if}
   </main>
 {/if}
 
-<button class="close-btn" on:click={closeApp}>Chiudi App</button>
+<button class="close-btn" on:click={closeApp}>Quit app</button>

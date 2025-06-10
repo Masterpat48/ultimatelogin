@@ -10,7 +10,7 @@ import (
 
 type App struct {
 	ctx    context.Context
-	dbPath string // Aggiunto campo per il percorso del database
+	dbPath string
 }
 
 type User struct {
@@ -31,9 +31,9 @@ func NewApp() *App {
 
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
-	// Inizializza il database al startup
+	// Database init
 	if err := a.initDatabase(); err != nil {
-		fmt.Println("Errore inizializzazione database:", err.Error())
+		fmt.Println("Error in database init:", err.Error())
 	}
 }
 
@@ -117,11 +117,11 @@ func (a *App) RegisterUser(username string, password string) bool {
 	// Controlla se l'utente esiste già
 	for _, user := range users {
 		if strings.EqualFold(user.Name, username) {
-			return false // Username già esistente
+			return false // Username already exist
 		}
 	}
 
-	// Aggiunge il nuovo utente
+	// Add a new user
 	newUser := User{
 		Name:       username,
 		Pass:       password,
@@ -129,7 +129,7 @@ func (a *App) RegisterUser(username string, password string) bool {
 	}
 	users = append(users, newUser)
 
-	// Salva il nuovo file
+	// Saving the new user
 	newData, err := json.MarshalIndent(users, "", "  ")
 	if err != nil {
 		return false
