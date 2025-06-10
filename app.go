@@ -33,21 +33,21 @@ func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 	// Database init
 	if err := a.initDatabase(); err != nil {
-		fmt.Println("Error in database init:", err.Error())
+		fmt.Println("Error while initializing the database:", err.Error())
 	}
 }
 
 func (a *App) Login(username string, password string) LoginResult {
 	data, err := os.ReadFile(a.dbPath)
 	if err != nil {
-		fmt.Println("Error reading file:", err)
+		fmt.Println("Error reading the file:", err)
 		return LoginResult{Success: false}
 	}
 
 	var users []User
 	err = json.Unmarshal(data, &users)
 	if err != nil {
-		fmt.Println("Error decoding JSON:", err)
+		fmt.Println("Error decoding the JSON:", err)
 		return LoginResult{Success: false}
 	}
 

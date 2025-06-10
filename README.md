@@ -19,10 +19,10 @@ The v1 is in italian, download v1.1+ to have it in english
 ## Usage
 
 There are 3 pre-made accounts:  
-{mario password123 (user)}     {luigi supersecure (user)}     {ADMIN ADMINIS (admin)}
+{username:mario password:password123 (role user)}     {username:luigi password:supersecure (role user)}     {username: ADMIN password:ADMINIS (role admin)}
 
 ## Made with
 
 Golang v1.24.3 windows  
 Wails v2.10.1 svelte    
-A little bit of AI 🙏   
+A little bit of AI, it's my firt svelte project 🙏 

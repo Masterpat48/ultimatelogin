@@ -24,6 +24,7 @@ main {
     color: white;
     cursor: pointer;
     transition: background-color 0.75s;
+    z-index: 1;
   }
 
   button:hover {

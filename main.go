@@ -22,7 +22,7 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:     "ultimatelogin",
+		Title:     "UltimateLogin",
 		Width:     1000,
 		MinWidth:  700,
 		Height:    700,
