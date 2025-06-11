@@ -25,4 +25,4 @@ There are 3 pre-made accounts:
 
 Golang v1.24.3 windows  
 Wails v2.10.1 svelte    
-A little bit of AI, it's my firt svelte project 🙏 
+A little bit of AI, it's my first svelte project 🙏 
